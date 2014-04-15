@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job Search</title>
+  </head>
+
+  <body>
+    <form action="/" method="get">
+      <input type="text" name="query" />
+      <input type="submit" value="Search" />
+    </form>
+
+    <% if !@jobs.nil? %>
+      <h2>Jobs</h2>
+
+      <ul>
+        <% @jobs.each do |job| %>
+          <li><a href="<%= job[:url] %>"><%= job[:title] %></a></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </body>
+</html>
